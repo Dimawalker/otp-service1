@@ -43,3 +43,34 @@
 ```bash
 git clone https://github.com/ВАШ_USERNAME/otp-service.git
 cd otp-service
+
+
+Запуск проекта
+1. Поднять PostgreSQL
+2. Настроить application.properties
+3. Настроить @mail
+4. Настроить SMPP
+5. Настроить Telegram
+6. Запустить приложение
+./gradlew run
+Для Windows:
+
+gradlew.bat run
+
+
+Каналы доставки OTP
+FILE
+Код сохраняется в файл, указанный в application.properties.
+
+EMAIL
+Код отправляется на email пользователя.
+
+SMS
+Код отправляется через SMPP-эмулятор.
+
+TELEGRAM
+Код отправляется в Telegram пользователю по его telegramChatId.
+
+
+Сборка проекта
+./gradlew build
