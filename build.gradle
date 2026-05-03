@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.promo'
+version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // PostgreSQL
+    implementation 'org.postgresql:postgresql:42.7.1'
+
+    // JWT
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.5'
+
+    // BCrypt
+    implementation 'org.mindrot:jbcrypt:0.4'
+
+    // Logging
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    implementation 'ch.qos.logback:logback-classic:1.4.14'
+
+    // JSON
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+
+    // Email (Jakarta Mail)
+    implementation 'com.sun.mail:jakarta.mail:2.0.1'
+    implementation 'com.sun.activation:jakarta.activation:2.0.1'
+
+
+    implementation 'org.jsmpp:jsmpp:3.0.1'
+
+}
+
+application {
+    mainClass = 'com.promo.otp.Main'
+}
+
+test {
+    useJUnitPlatform()
+}
